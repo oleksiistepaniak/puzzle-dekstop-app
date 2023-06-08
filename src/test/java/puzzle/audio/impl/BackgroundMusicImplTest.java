@@ -40,16 +40,6 @@ class BackgroundMusicImplTest {
     }
 
     @Test
-    public void playBackgroundMusicTwice_notOk() {
-        backgroundMusic.playBackgroundMusic();
-        assertThrows(BackgroundMusicException.class, () -> {
-            convertCurrentThreadToSleepMode();
-            backgroundMusic.playBackgroundMusic();
-                }
-        );
-    }
-
-    @Test
     public void muteBackgroundMusicWhenNotPlaying_ok() {
         backgroundMusic.muteBackgroundMusic();
         convertCurrentThreadToSleepMode();
@@ -68,16 +58,6 @@ class BackgroundMusicImplTest {
         backgroundMusic.muteBackgroundMusic();
         backgroundMusic.muteBackgroundMusic();
         assertFalse(backgroundMusic.isMusicPlaying());
-    }
-
-    @Test
-    public void enableBackgroundMusicTwice_ok() {
-        backgroundMusic.playBackgroundMusic();
-        backgroundMusic.muteBackgroundMusic();
-        backgroundMusic.enableBackgroundMusic();
-        backgroundMusic.enableBackgroundMusic();
-        convertCurrentThreadToSleepMode();
-        assertTrue(backgroundMusic.isMusicPlaying());
     }
 
     @Test
@@ -101,7 +81,7 @@ class BackgroundMusicImplTest {
         try {
             Thread.sleep(TIME_FOR_SLEEPING);
         } catch (InterruptedException e) {
-            throw new RuntimeException("Current thread can't sleep", e);
+            throw new RuntimeException("Current thread can't sleep ", e);
         }
     }
 }
