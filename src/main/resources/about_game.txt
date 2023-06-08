@@ -1,0 +1,17 @@
+PuzzleGame is a puzzle game application.
+Your task is to assemble puzzles on the graphical interface to recreate
+the picture shown when the Solution button is pressed.
+The functionality of this game includes:
+- The Solution button allows you to view the correct solution.
+- The Shuffle button allows you to shuffle the puzzles on the graphical
+interface in a random order.
+- The Mute music button allows you to turn off the background music.
+- The Enable music button allows you to turn on the background music.
+- The About game button allows you to read information about the game.
+- You can drag and move the puzzle pieces on the graphical interface
+using the mouse.
+In the future, the game will be further developed and any bugs will be
+fixed (such as implementing functionality for automatically checking
+the solution placed by the player on the graphical interface,
+authentication/registration, high scores, etc.). For any suggestions
+or bug reports, please email me at alexstepanyak@gmail.com.
