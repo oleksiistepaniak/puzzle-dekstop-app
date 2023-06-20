@@ -21,14 +21,15 @@ public class ImageSplitterImpl implements ImageSplitter {
     public List<PuzzlePiece> splitImage(BufferedImage image, int numRows, int numColumns) {
         int width = image.getWidth();
         int height = image.getHeight();
-        if (width >= MAX_WIDTH_SIZE || height >= MAX_HEIGHT_SIZE ||
-                numColumns > MAX_NUMBER_OF_ROWS_AND_COLUMNS || numRows != numColumns
+        if (width >= MAX_WIDTH_SIZE || height >= MAX_HEIGHT_SIZE
+                || numColumns > MAX_NUMBER_OF_ROWS_AND_COLUMNS || numRows != numColumns
                 || width <= MIN_WIDTH_SIZE || height <= MIN_HEIGHT_SIZE
                 || numColumns < MIN_NUMBER_OF_ROWS_AND_COLUMNS) {
             throw new ImageSplitterException("The passed image is too enormous."
                     + " The maximum allowed width is " + MAX_WIDTH_SIZE + " and the maximum"
                     + " allowed height is " + MAX_HEIGHT_SIZE + ". The minimum allowed width is "
-                    + MIN_WIDTH_SIZE + " and the minimum allowed height is " + MIN_HEIGHT_SIZE + ".");
+                    + MIN_WIDTH_SIZE + " and the minimum allowed height is " + MIN_HEIGHT_SIZE
+                    + ".");
         }
         int pieceWidth = width / numColumns;
         int pieceHeight = height / numRows;

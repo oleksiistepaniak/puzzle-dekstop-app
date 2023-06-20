@@ -13,9 +13,9 @@ import puzzle.ui.impl.PuzzleGameFrameImpl;
 import puzzle.util.ImageSplitter;
 
 public class PuzzleGameImpl implements PuzzleGame {
-    private static final File FILE_OF_IMAGE = new File("src/main/resources/nature-image.jpeg");
     public static final int NUM_ROWS = 4;
     public static final int NUM_COLUMNS = 4;
+    private static final File FILE_OF_IMAGE = new File("src/main/resources/nature-image.jpeg");
     private final ImageSplitter puzzleImageSplitter;
     private final BackgroundMusic puzzleBackgroundMusic;
 
@@ -31,7 +31,8 @@ public class PuzzleGameImpl implements PuzzleGame {
         List<PuzzlePiece> puzzlePieces = puzzleImageSplitter.splitImage(image,
                 NUM_ROWS, NUM_COLUMNS);
         List<PuzzlePiece> originalPuzzlePieces = puzzleImageSplitter.getOriginalPuzzlePieces();
-        return new PuzzleGameFrameImpl(puzzlePieces, originalPuzzlePieces, puzzleImageSplitter, puzzleBackgroundMusic);
+        return new PuzzleGameFrameImpl(puzzlePieces, originalPuzzlePieces,
+                puzzleImageSplitter, puzzleBackgroundMusic);
     }
 
     private BufferedImage loadImage() {
