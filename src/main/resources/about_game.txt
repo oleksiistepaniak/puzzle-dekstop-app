@@ -1,17 +1,19 @@
-PuzzleGame is a puzzle game application.
-Your task is to assemble puzzles on the graphical interface to recreate
-the picture shown when the Solution button is pressed.
-The functionality of this game includes:
-- The Solution button allows you to view the correct solution.
-- The Shuffle button allows you to shuffle the puzzles on the graphical
-interface in a random order.
-- The Mute music button allows you to turn off the background music.
-- The Enable music button allows you to turn on the background music.
-- The About game button allows you to read information about the game.
-- You can drag and move the puzzle pieces on the graphical interface
-using the mouse.
-In the future, the game will be further developed and any bugs will be
-fixed (such as implementing functionality for automatically checking
-the solution placed by the player on the graphical interface,
-authentication/registration, high scores, etc.). For any suggestions
-or bug reports, please email me at alexstepanyak@gmail.com.
+PUZZLEGAME is a desktop application that allows you to play puzzles.
+You can move puzzle pieces around the graphical interface by clicking
+on a puzzle piece to select it and then clicking on another puzzle
+piece to swap their positions. The main objective is to recreate the original image.
+
+Key features of the application include:
+- The "SOLUTION" button allows you to view the complete solution.
+- The "SHUFFLE" button allows you to shuffle the puzzle pieces.
+- The "MUTE MUSIC" button allows you to turn off the background music.
+- The "ENABLE MUSIC" button allows you to turn on the background music.
+- The "ABOUT GAME" button provides brief information about the game and the developer.
+- The "LOAD IMAGE" button allows you to upload your own image, which will be
+automatically divided into puzzle pieces.
+- By clicking on the puzzle pieces, you can change their positions.
+- Solution verification is performed after each puzzle piece movement on
+the graphical interface.
+
+For any suggestions for improving the application or reporting any bugs, please
+contact us at alexstepanyak@gmail.com. Developer: Oleksii Stepaniak.

@@ -12,25 +12,25 @@ class FileLoaderTest {
     @Test
     public void loadAboutMessageFromFile_ExistingFile_ok() {
         String expectedContent = "This is the about message.";
-        String actualContent = FileLoader.loadAboutMessageFromFile(EXISTING_FILE);
+        String actualContent = FileLoader.loadMessageFromFile(EXISTING_FILE);
         assertEquals(expectedContent, actualContent);
     }
 
     @Test
     public void loadAboutMessageFromFile_NonExistingFile_notOk() {
         assertThrows(RuntimeException.class, () -> FileLoader
-                .loadAboutMessageFromFile(NON_EXISTING_FILE));
+                .loadMessageFromFile(NON_EXISTING_FILE));
     }
 
     @Test
     public void loadAboutMessageFromFile_NullFilePath_notOk() {
         assertThrows(NullPointerException.class, () -> FileLoader
-                .loadAboutMessageFromFile(null));
+                .loadMessageFromFile(null));
     }
 
     @Test
     public void loadAboutMessageFromFile_EmptyFilePath_notOk() {
         assertThrows(RuntimeException.class, () -> FileLoader
-                .loadAboutMessageFromFile(EMPTY_PATH_TO_FILE));
+                .loadMessageFromFile(EMPTY_PATH_TO_FILE));
     }
 }

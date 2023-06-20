@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ImageSplitterImplTest {
     private static final String VALID_PATH_TO_IMAGE = "src/main/resources/nature-image.jpeg";
-    private static final int VALID_NUMBER_OF_ROWS = 3;
+    private static final int VALID_NUMBER_OF_ROWS = 4;
     private static final int VALID_NUMBER_OF_COLUMNS = 4;
     private ImageSplitter imageSplitter;
     private BufferedImage testImage;

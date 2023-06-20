@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileLoader {
-    public static String loadAboutMessageFromFile(String filePath) {
+    public static String loadMessageFromFile(String filePath) {
         StringBuilder sb = new StringBuilder();
 
         try {
