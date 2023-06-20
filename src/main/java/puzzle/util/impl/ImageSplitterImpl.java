@@ -3,28 +3,32 @@ package puzzle.util.impl;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import puzzle.exception.ImageSplitterException;
 import puzzle.model.PuzzlePiece;
 import puzzle.util.ImageSplitter;
 
 public class ImageSplitterImpl implements ImageSplitter {
-    private static final int MAX_WIDTH_SIZE = 1500;
-    private static final int MAX_HEIGHT_SIZE = 1500;
-    private static final int MAX_NUMBER_OF_ROWS = 10;
-    private static final int MAX_NUMBER_OF_COLUMNS = 10;
+    private static final int MAX_WIDTH_SIZE = 1200;
+    private static final int MAX_HEIGHT_SIZE = 600;
+    private static final int MIN_WIDTH_SIZE = 600;
+    private static final int MIN_HEIGHT_SIZE = 300;
+    private static final int MAX_NUMBER_OF_ROWS_AND_COLUMNS = 8;
+    private static final int MIN_NUMBER_OF_ROWS_AND_COLUMNS = 3;
     private List<PuzzlePiece> originalPuzzlePieces;
 
     @Override
     public List<PuzzlePiece> splitImage(BufferedImage image, int numRows, int numColumns) {
         int width = image.getWidth();
         int height = image.getHeight();
-        if (width > MAX_WIDTH_SIZE || height > MAX_HEIGHT_SIZE || numRows > MAX_NUMBER_OF_ROWS
-                || numColumns > MAX_NUMBER_OF_COLUMNS) {
+        if (width >= MAX_WIDTH_SIZE || height >= MAX_HEIGHT_SIZE ||
+                numColumns > MAX_NUMBER_OF_ROWS_AND_COLUMNS || numRows != numColumns
+                || width <= MIN_WIDTH_SIZE || height <= MIN_HEIGHT_SIZE
+                || numColumns < MIN_NUMBER_OF_ROWS_AND_COLUMNS) {
             throw new ImageSplitterException("The passed image is too enormous."
                     + " The maximum allowed width is " + MAX_WIDTH_SIZE + " and the maximum"
-                    + " allowed height is " + MAX_HEIGHT_SIZE);
+                    + " allowed height is " + MAX_HEIGHT_SIZE + ". The minimum allowed width is "
+                    + MIN_WIDTH_SIZE + " and the minimum allowed height is " + MIN_HEIGHT_SIZE + ".");
         }
         int pieceWidth = width / numColumns;
         int pieceHeight = height / numRows;
@@ -62,8 +66,6 @@ public class ImageSplitterImpl implements ImageSplitter {
                 count++;
             }
         }
-
-        Collections.shuffle(puzzlePieces);
 
         return puzzlePieces;
     }

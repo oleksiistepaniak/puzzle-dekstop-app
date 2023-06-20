@@ -8,4 +8,8 @@ public interface PuzzleGameFrame {
     void shufflePuzzle();
 
     void showAboutGameMessage();
+
+    void loadImage();
+
+    void checkCorrectSolution();
 }
