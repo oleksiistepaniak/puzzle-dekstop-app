@@ -22,7 +22,6 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import puzzle.audio.BackgroundMusic;
 import puzzle.exception.ImageSplitterException;
-import puzzle.game.PuzzleGame;
 import puzzle.game.impl.PuzzleGameImpl;
 import puzzle.model.PuzzlePiece;
 import puzzle.ui.PuzzleGameFrame;
@@ -169,8 +168,9 @@ public class PuzzleGameFrameImpl extends JFrame implements PuzzleGameFrame {
                     originalPuzzlePieces.addAll(newPuzzlePieces);
                     displayPuzzlePieces();
                 } else {
-                    JOptionPane.showMessageDialog(this,
-                            FileLoader.loadMessageFromFile(PATH_TO_INVALID_IMAGE_DIMENSIONS_MESSAGE));
+                    JOptionPane
+                            .showMessageDialog(this, FileLoader
+                                    .loadMessageFromFile(PATH_TO_INVALID_IMAGE_DIMENSIONS_MESSAGE));
                 }
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this,
